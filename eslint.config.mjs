@@ -24,7 +24,6 @@ export default tseslint.config(
   {
     plugins: {
       'react-hooks': reactHookPlugin,
-      'simple-import-sort': simpleImportSort,
     },
     languageOptions: {
       ecmaVersion: 2020,
@@ -60,22 +59,6 @@ export default tseslint.config(
       'react/display-name': 'warn',
       'react/prop-types': 'off',
       'no-console': ['error'],
-      'simple-import-sort/imports': [
-        'error',
-        {
-          groups: [
-            // Side effect imports.
-            ['^\\u0000'],
-            // Packages. `react` related packages come first.
-            ['^react', '^@?\\w'],
-            // Parent imports. Put `..` last.
-            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-            // Other relative imports. Put same-folder imports and `.` last.
-            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-          ],
-        },
-      ],
-      'simple-import-sort/exports': 'error',
       '@typescript-eslint/no-unused-expressions': 'off',
       '@typescript-eslint/no-unsafe-function-type': 'off',
     },
